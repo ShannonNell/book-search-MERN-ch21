@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-errors');
 const { User, Book } = require('../models');
-const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth'); 
 
 const resolvers = {
     Query: {
@@ -45,7 +45,6 @@ const resolvers = {
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
                     { $push: { savedBooks: input } },
-                    // check push works
                     { new: true }
                 );
                 
