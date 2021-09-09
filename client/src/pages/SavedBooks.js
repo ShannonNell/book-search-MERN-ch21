@@ -26,6 +26,8 @@ const SavedBooks = () => {
         variables: { bookId }
       });
 
+      console.log("book data:", data);
+
       if (error) {
         throw new Error('Something went wrong!');
       }
