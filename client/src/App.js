@@ -3,7 +3,6 @@ import {
   ApolloProvider,
   ApolloClient,
   InMemoryCache,
-  createHttpLink
 } from '@apollo/client';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -22,7 +21,8 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: '/graphql'
+  uri: '/graphql',
+  cache: new InMemoryCache(),
 });
 
 function App() {
