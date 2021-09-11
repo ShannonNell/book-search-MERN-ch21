@@ -8,7 +8,11 @@ import { ADD_USER } from '../utils/mutations';
 
 const SignupForm = () => {
   // set initial form state
-  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+  const [userFormData, setUserFormData] = useState({ 
+    username: '', 
+    email: '', 
+    password: '' 
+  });
   // set state for form validation
   const [validated] = useState(false);
   // set state for alert
@@ -25,6 +29,13 @@ const SignupForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+    // check if form has everything
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
     try {
       const { data } = await addUser({
         variables: {...userFormData}
@@ -33,7 +44,7 @@ const SignupForm = () => {
       Auth.login(data.addUser.token);
     } catch (err) {
       console.error(err);
-      setShowAlert(true);
+      setShowAlert(true); // =============================================CHECK THIS
     }
 
     setUserFormData({
