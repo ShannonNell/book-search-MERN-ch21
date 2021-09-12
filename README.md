@@ -1,6 +1,4 @@
 # Challenge 21 MERN: Book Search Engine
-### TODO
-- check resolvers/review queries/mutations work in graphQL before moving on
 
 ## Description
 A fully functioning Google Books API search engine built with a RESTful API that has been refactored to be a GraphQL API built with Apollo Server. The app was built using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server and API.
@@ -18,16 +16,16 @@ ___
 ___
 
 ## Installation
-Clone the repository from GitHub to your local machine. In the command line type `npm install` to install the dependencies and `npm start` to run the server.
+Clone the repository from GitHub to your local machine. In the command line type `npm install` to install the dependencies and `npm run develop` from the root of the project to run the server.
 ___
 
 ## Usage
-This application will allow users to view an about me page, my projects, my resume, and fill out a contact form.
-![screenshotHere](./src/assets/ch21_screenshot.png)
+This application will allow users to search for new books to read, login and keep a list of their favourites.
+![screenshot](./assets/ch21_ss.png)
 ___
 
 ## Links
-* [Deployed Application]()
+* [Deployed Application](https://calm-tor-71027.herokuapp.com/)
 ___
 
 ## Tests
