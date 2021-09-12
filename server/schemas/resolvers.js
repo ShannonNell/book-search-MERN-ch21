@@ -1,6 +1,6 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Book } = require('../models');
-const { signToken } = require('../utils/auth'); 
+const { AuthenticationError } = require("apollo-server-express");
+const { User } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
     Query: {
@@ -8,7 +8,7 @@ const resolvers = {
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
-                    .populate('books');
+                    // .populate('books');
                 
                 return userData;
             }
